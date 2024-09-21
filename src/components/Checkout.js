@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearCart } from '../redux/BookSlice'; // Import the clearCart action
-import './Checkout.css'; // Import the external CSS file
+import { clearCart } from '../redux/BookSlice';
+import './Checkout.css';
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Checkout = () => {
     payment: '',
   });
   const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState(false); // State to track successful checkout
+  const [success, setSuccess] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -30,10 +30,7 @@ const Checkout = () => {
     const formErrors = validateForm();
     
     if (Object.keys(formErrors).length === 0) {
-      // Dispatch clearCart action
       dispatch(clearCart());
-
-      // Set success message and clear form
       setSuccess(true);
       setForm({ name: '', email: '', address: '', payment: '' });
     } else {
@@ -43,10 +40,9 @@ const Checkout = () => {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: '' }); // Clear errors on input change
+    setErrors({ ...errors, [e.target.name]: '' });
   };
 
-  // Calculate total price
   const totalPrice = cart.reduce((total, book) => total + (book.price * (book.quantity || 1)), 0);
 
   return (
@@ -67,7 +63,7 @@ const Checkout = () => {
                 <p>{book.title} x {book.quantity || 1} - ${(book.price * (book.quantity || 1)).toFixed(2)}</p>
               </div>
             ))}
-            <p>Total: ${totalPrice.toFixed(2)}</p>
+            <p className="total-price">Total: ${totalPrice.toFixed(2)}</p>
           </div>
 
           <form onSubmit={handleSubmit} className="checkout-form">

@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addToCart } from '../redux/BookSlice';
-import './BookDetails.css'; // Import the external CSS file
+import './BookDetails.css';
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -29,3 +29,4 @@ const BookDetails = () => {
 };
 
 export default BookDetails;
+

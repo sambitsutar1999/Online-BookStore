@@ -1,17 +1,32 @@
 .checkout-container {
   max-width: 600px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
   background-color: #f9f9f9;
+  border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .checkout-title {
   text-align: center;
-  font-size: 24px;
+  color: #333;
   margin-bottom: 20px;
+}
+
+.order-summary {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.order-item {
+  padding: 5px 0;
+}
+
+.total-price {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .checkout-form {
@@ -25,10 +40,15 @@
 
 .form-input {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
   width: 100%;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .form-error {
@@ -42,29 +62,18 @@
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 .submit-button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 600px) {
-  .checkout-container {
-      padding: 15px;
-  }
-
-  .checkout-title {
-      font-size: 20px;
-  }
-
-  .form-input {
-      font-size: 14px;
-  }
-
-  .submit-button {
-      font-size: 14px;
-  }
+.success-message {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
+

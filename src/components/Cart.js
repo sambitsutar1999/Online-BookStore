@@ -3,16 +3,14 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/BookSlice';
 import { Link } from 'react-router-dom';
-import './Cart.css'; // Import the external CSS file
+import './Cart.css';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.books.cart);
 
-  // Calculate total price
   const totalPrice = cart.reduce((total, book) => total + (book.price * (book.quantity || 1)), 0);
 
-  // Handle quantity change
   const updateQuantity = (book, increment) => {
     if (increment) {
       dispatch({ type: 'books/addToCart', payload: { ...book, quantity: (book.quantity || 1) + 1 } });

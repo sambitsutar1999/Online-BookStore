@@ -1,9 +1,8 @@
-// src/components/SearchBar.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearchQuery } from '../redux/BookSlice';
-import { FaSearch } from 'react-icons/fa'; // Import the search icon
-import './SearchBar.css'; // Import the external CSS file
+import { FaSearch } from 'react-icons/fa';
+import './SearchBar.css';
 
 function SearchBar() {
   const [query, setQuery] = useState('');
@@ -16,7 +15,7 @@ function SearchBar() {
 
   return (
     <div className="search-bar-container">
-      <FaSearch className="search-icon" /> {/* Search icon */}
+      <FaSearch className="search-icon" />
       <input
         type='text'
         placeholder='Search by title, author, or genre'

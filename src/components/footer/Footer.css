@@ -1,12 +1,10 @@
-/* src/components/Footer.css */
-
 .footer {
-    background-color: #007BFF; /* Blue background */
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    /* position: fixed; */
-    bottom: 0;
-    width: 100%;
-  }
+  background-color: #007BFF;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  bottom: 0;
+  width: 100%;
+}
+
   

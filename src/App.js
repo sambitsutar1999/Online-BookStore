@@ -1,35 +1,52 @@
-// src/App.jsx
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import BookList from './components/BookList';
 import BookDetails from './components/BookDetails';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import Navbar from './components/Navbar';
 import Footer from './components/footer/Footer';
-import ImageSlider from './components/slider/ImageSlider'; // Import the ImageSlider component
+import ImageSlider from './components/slider/ImageSlider';
+import AuthPage from './components/AuthPage';
 
 function App() {
+  const user = useSelector((state) => state.auth?.user || null);
+
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
-        <Route path="/" element={
-          <>
-            <ImageSlider /> {/* Only render the slider on the homepage */}
-            <BookList />
-          </>
-        } />
+        <Route
+          path="/"
+          element={
+            <>
+              <ImageSlider />
+              <BookList />
+            </>
+          }
+        />
         <Route path="/book/:bookId" element={<BookDetails />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+
+
+        <Route
+          path="/checkout"
+          element={user ? <Checkout /> : <Navigate to="/auth" />}
+        />
+
+
+        <Route path="/auth" element={<AuthPage />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 
 export default App;
+
+
 
 
 

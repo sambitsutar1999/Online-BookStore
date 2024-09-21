@@ -1,14 +1,14 @@
-// src/components/BookList.jsx
+// src/components/BookList.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBooks, addToCart } from '../redux/BookSlice';
 import { Link } from 'react-router-dom';
-import './BookList.css'; // Import the external CSS file
+import './BookList.css';
 
 function BookList() {
     const dispatch = useDispatch();
     const { list: books, status, searchQuery } = useSelector(state => state.books);
-    const [viewAll, setViewAll] = useState(false); // State to toggle view all books
+    const [viewAll, setViewAll] = useState(false);
 
     useEffect(() => {
         dispatch(fetchBooks(searchQuery));
@@ -56,3 +56,4 @@ function BookList() {
 }
 
 export default BookList;
+

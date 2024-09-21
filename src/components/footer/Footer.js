@@ -1,6 +1,5 @@
-// src/components/Footer.jsx
 import React from 'react';
-import './Footer.css'; // External CSS for styling
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -11,3 +10,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

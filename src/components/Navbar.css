@@ -1,67 +1,76 @@
 .navbar {
   display: flex;
-  justify-content: space-between; /* Space between left, middle, and right sections */
-  align-items: center; /* Center items vertically */
-  padding: 10px 20px; /* Padding around navbar */
-  background-color: #fff; /* Navbar background color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
-  max-width: 100%; /* Max width for the navbar */
-  margin: 0 auto; /* Center the navbar */
-  overflow: hidden; /* Prevent overflow */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .left-section {
-  flex: 1; /* Allow it to grow */
+  flex: 1;
 }
 
 .middle-section {
-  flex: 2; /* Allow it to take more space */
+  flex: 2;
   display: flex;
-  justify-content: center; /* Center search bar */
+  justify-content: center;
 }
 
 .right-section {
-  flex: 1; /* Allow it to grow */
+  flex: 1;
   display: flex;
-  justify-content: flex-end; /* Align to the right */
+  justify-content: flex-end;
 }
 
-.icon, .cart-icon {
-  margin-left: 15px; /* Space between icons */
-  position: relative; /* For positioning the cart count */
+.icon, .cart-icon, .user-icon {
+  margin-left: 15px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.icon:hover, .cart-icon:hover, .user-icon:hover {
+  color: #007bff;
 }
 
 .cart-count {
-  position: absolute; /* Position count over cart icon */
+  position: absolute;
   top: -5px;
   right: -10px;
-  background: red; /* Background color for count */
-  color: white; /* Text color */
-  border-radius: 50%; /* Circular count */
-  padding: 2px 6px; /* Padding for count */
-  font-size: 12px; /* Font size */
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
 }
 
 .logo-text {
-  font-size: 24px; /* Logo font size */
-  font-weight: bold; /* Bold logo */
+  font-size: 24px;
+  font-weight: bold;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column; /* Stack items vertically */
-      align-items: flex-start; /* Align items to start */
+    flex-direction: column;
+    align-items: flex-start;
   }
   
   .middle-section {
-      margin: 10px 0; /* Space around search bar */
+    margin: 10px 0;
   }
 
   .right-section {
-      justify-content: flex-start; /* Align right section items to start */
+    justify-content: flex-start;
+  }
+
+  .icon, .cart-icon, .user-icon {
+    margin-left: 10px;
   }
 }
+
 
 
 

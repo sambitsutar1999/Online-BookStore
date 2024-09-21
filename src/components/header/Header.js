@@ -1,8 +1,7 @@
-// src/components/Header.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaShoppingCart } from 'react-icons/fa'; // React icons
-import './Header.css'; // External CSS for styling
+import { FaHome, FaShoppingCart } from 'react-icons/fa';
+import './Header.css';
 
 const Header = () => {
   return (
@@ -25,3 +24,4 @@ const Header = () => {
 };
 
 export default Header;
+

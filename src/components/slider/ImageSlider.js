@@ -1,16 +1,14 @@
-// src/components/ImageSlider.jsx
 import React from 'react';
 import Slider from 'react-slick';
-import './ImageSlider.css'; // External CSS for styling
+import './ImageSlider.css';
 
 const ImageSlider = () => {
-  // Slider settings with auto sliding enabled
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplay: true, // Enable auto sliding
-    autoplaySpeed: 3000, // Time in milliseconds between slides
+    autoplay: true,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -33,3 +31,4 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
+
