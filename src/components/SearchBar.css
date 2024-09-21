@@ -1,0 +1,40 @@
+/* SearchBar.css */
+
+.search-bar-container {
+  position: relative; /* Enables absolute positioning for the icon */
+  width: 400px; /* Set width of the entire search bar container */
+  margin: 10px 0; /* Space around the search bar */
+}
+
+.search-input {
+  width: 100%; /* Full width for the input field */
+  height: 30px; /* Decreased height */
+  border-radius: 25px; /* Rounded corners */
+  padding: 0 40px 0 15px; /* Space for the icon on the right */
+  border: 1px solid #ccc; /* Border style */
+  font-size: 16px; /* Adjusted font size */
+  outline: none; /* Remove outline on focus */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus */
+}
+
+.search-input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add subtle shadow effect on focus */
+}
+
+.search-icon {
+  position: absolute; /* Absolutely position the icon */
+  right: 10px; /* Align it to the right side */
+  top: 50%; /* Vertically center the icon */
+  transform: translateY(-50%); /* Adjust for perfect centering */
+  color: #666; /* Color of the icon */
+  font-size: 20px; /* Size of the icon */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-bar-container {
+    width: 300px; /* Adjust the width for smaller screens */
+  }
+}
