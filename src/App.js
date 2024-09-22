@@ -22,6 +22,7 @@ function App() {
           path="/"
           element={
             <>
+            
               <ImageSlider />
               <BookList />
             </>
