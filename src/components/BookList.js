@@ -19,6 +19,7 @@ function BookList() {
 
     return (
         <div className="book-list-container">
+            <h2 className='font-sans text-xl font-semibold '>Find Your Favourite Books.</h2>
             <div className="book-grid">
                 {books.slice(0, viewAll ? books.length : 4).map((book) => (
                     <div key={book.id} className="book-card">

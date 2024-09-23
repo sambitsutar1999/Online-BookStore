@@ -10,6 +10,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/footer/Footer';
 import ImageSlider from './components/slider/ImageSlider';
 import AuthPage from './components/AuthPage';
+import Banner from './components/Banner';
+import Socials from './components/Socials';
 
 function App() {
   const user = useSelector((state) => state.auth?.user || null);
@@ -22,9 +24,10 @@ function App() {
           path="/"
           element={
             <>
-            
-              <ImageSlider />
+               <Banner />
+              
               <BookList />
+              <ImageSlider />
             </>
           }
         />
@@ -40,6 +43,7 @@ function App() {
 
         <Route path="/auth" element={<AuthPage />} />
       </Routes>
+      <Socials />
       <Footer />
     </>
   );
